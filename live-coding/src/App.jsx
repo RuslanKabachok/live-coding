@@ -12,7 +12,7 @@ function App() {
 
   return (
     <>
-      <UseMemoExample/>
+      {/* <UseMemoExample/> */}
       {/* <UserList/> */}
       {/* <UseRefExample4/> */}
       {/* <UseRefExample/>
