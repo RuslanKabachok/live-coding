@@ -6,12 +6,15 @@ import UserList from './UserList/UserList'
 // import UseReducerExample from './Examples/UseReducer'
 // import UseLayoutEffectExample from './Examples/UseLayoutEffect'
 // import UseRefExample4 from './UseRefExamples/UseRefExample4'
-import UseMemoExample from './UseMemoExamples/UseMemoExample3'
+// import UseMemoExample from './UseMemoExamples/UseMemoExample4'
+// import UseCallBack from './UseCallBackExamples/UseCallbackExample2'
+import UseContextExample from './UseContextExamples/UseContextExample1'
 
 function App() {
 
   return (
     <>
+      <UseContextExample/>
       {/* <UseMemoExample/> */}
       {/* <UserList/> */}
       {/* <UseRefExample4/> */}

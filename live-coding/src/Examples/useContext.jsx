@@ -26,3 +26,5 @@ function Child() {
     </div>
   );
 }
+
+export default App;
