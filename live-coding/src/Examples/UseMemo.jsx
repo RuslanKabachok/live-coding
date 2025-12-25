@@ -2,7 +2,7 @@ import { useState, useMemo } from 'react';
 
 function UseMemoExample() {
   const [count, setCount] = useState(0);
-  const [items, setItems] = useState([1, 2, 3, 4, 5]);
+  const [items, ] = useState([1, 2, 3, 4, 5]);
   
   // ❌ Без useMemo - обчислюється при кожному рендері
   // const sum = items.reduce((acc, item) => acc + item, 0);
