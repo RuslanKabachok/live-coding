@@ -9,7 +9,7 @@ import './App.css'
 // import UseMemoExample from './UseMemoExamples/UseMemoExample4'
 // import UseCallBack from './UseCallBackExamples/UseCallbackExample2'
 // import UseContextExample from './UseContextExamples/UseContextExample1'
-import Task from './ReactTraining/Task';
+import TaskList from './ReactTraining/TaskList/TaskList';
 
 function App() {
 
@@ -23,7 +23,7 @@ function App() {
       <UseCallbackExample/>
       <UseReducerExample/>
       <UseLayoutEffectExample/> */}
-      <Task title={'My first React.js title'} descr={'Very serious description to my first trainig task'} isCompleted={false}/>
+      <TaskList />
     </>
   )
 }
