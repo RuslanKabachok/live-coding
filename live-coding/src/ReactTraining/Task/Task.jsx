@@ -1,20 +1,34 @@
 import './Task.css';
 
-function Task({ title, descr, isCompleted, children }) {
+function Task({ title, descr, isCompleted, onToggle }) {
   return (
-    <div
-      className={`${isCompleted ? "bg-blue-200" : "bg-red-200"
-        } flex flex-col items-center gap-3 p-6 shadow-lg rounded-xl m-4 transition duration-300 hover:scale-105`}
+    <li
+      className={`
+                group relative flex justify-between items-start gap-4
+                p-5 rounded-xl shadow-sm border transition
+                ${isCompleted ? 'bg-gray-50 opacity-70' : 'bg-white'}
+            `}
     >
-      <h1 className="text-2xl font-semibold text-gray-800">{title}</h1>
-      <p className="text-gray-600 italic text-center">{descr}</p>
-      {isCompleted ? (
-        <span className="font-bold text-green-600">✅ Task completed</span>
-      ) : (
-        <span className="font-medium text-red-600">❌ Task not completed</span>
-      )}
-      {children}
-    </div>
+      <div className="flex flex-col gap-1">
+        <h1 className="text-2xl font-semibold text-gray-800">{title}</h1>
+        <p className="text-sm text-gray-500">{descr}</p>
+        <span
+          className={`
+                        absolute bottom-1 left-5 text-sm font-medium
+                        opacity-0 group-hover:opacity-100 transition
+                        ${isCompleted ? 'text-green-600' : 'text-red-600'}
+                    `}
+        >
+          {isCompleted ? '✔ Task completed' : '✖ Task not completed'}
+        </span>
+      </div>
+      <input
+        type="checkbox"
+        checked={isCompleted}
+        onChange={onToggle}
+        className="w-5 h-5 mt-1 accent-blue-500 cursor-pointer"
+      />
+    </li>
   );
 }
 
