@@ -19,12 +19,13 @@ export default function TaskList() {
     };
 
     const toggleTask = (id) => {
-        const result = tasks.map(task => {
-            if (task.id === id) {
-                return { ...task, checked: !task.checked }
-            } return task
-        })
-        setTasks(result)
+        setTasks(prev =>
+            prev.map(task => {
+                if (task.id === id) {
+                    return { ...task, checked: !task.checked }
+                } return task
+            })
+        )
     }
 
 
@@ -36,7 +37,7 @@ export default function TaskList() {
         </form>
         {tasks.length ? <h1 className='text-xl font-semibold mb-4'>TaskList: </h1> : null}
         <ul className='w-full space-y-3'>{tasks.map(task =>
-            <Task key={task.id} title={task.text} isCompleted={task.checked} descr={task.descr} children={<input type="checkbox" name="isCompleted" id='check' checked={task.checked} onChange={() => toggleTask(task.id)} />}>
+            <Task key={task.id} title={task.text} isCompleted={task.checked} descr={task.descr} onToggle={() => toggleTask(task.id)}>
             </Task>)}
         </ul>
     </div>
